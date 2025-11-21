@@ -1,7 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:penoft_machine_test/features/app_root/presentation/app_root.dart';
 import 'package:penoft_machine_test/features/authentication/presentation/provider/authentication_provider.dart';
@@ -43,8 +41,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _init() async {
     final currentUser = context.read<AuthenticationProvider>().currentUser;
-
-    log('currentUser: $currentUser');
 
     if (currentUser == null) {
       Navigator.pushAndRemoveUntil(

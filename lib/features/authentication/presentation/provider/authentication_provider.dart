@@ -130,7 +130,6 @@ class AuthenticationProvider extends ChangeNotifier {
 
   Future<void> getUser({String? token}) async {
     final email = await getUserFromSharedPreferences();
-    log('email: $email');
     if (email == null) {
       _currentUser = null;
       notifyListeners();
@@ -194,7 +193,6 @@ class AuthenticationProvider extends ChangeNotifier {
 
   bool isUploadingProfilePicture = false;
   Future<void> uploadProfilePicture(VoidCallback onSuccess) async {
-    log('uploadProfilePicture');
     isUploadingProfilePicture = true;
     notifyListeners();
     if (profilePictureFile == null) {

@@ -35,7 +35,6 @@ class CourseProvider extends ChangeNotifier {
         notifyListeners();
       },
       (data) {
-        log('data: ${data.length}');
         _courses = data;
         _isLoading = false;
         notifyListeners();

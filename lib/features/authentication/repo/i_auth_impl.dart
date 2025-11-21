@@ -62,10 +62,7 @@ class IAuthImpl {
             '577755749490-2quctpi3fdr24oraqamhob5lqtkg3i01.apps.googleusercontent.com',
       ).signIn();
 
-      log('gUser: $gUser');
-
       final gAuth = await gUser?.authentication;
-      log('gAuth: $gAuth');
 
       if (gAuth == null) {
         return left(
@@ -77,7 +74,6 @@ class IAuthImpl {
         accessToken: gAuth.accessToken,
         idToken: gAuth.idToken,
       );
-      log('credential: $credential');
 
       await _firebaseAuth.signInWithCredential(credential);
 
@@ -108,7 +104,6 @@ class IAuthImpl {
 
   FutureResult<UserModel> createUser(UserModel user) async {
     try {
-      log('createUser: ${user.toMap()}');
       final response = await http.post(
         Uri.parse(
           'https://machinetest.flutter.penoft.com/api/user/create-user',
@@ -142,8 +137,6 @@ class IAuthImpl {
     required String email,
     String? token,
   }) async {
-    log('getUser email: $email');
-    log('getUser token: $token');
     try {
       String? tokenResult;
       if (token == null) {
@@ -156,9 +149,7 @@ class IAuthImpl {
         Uri.parse('https://machinetest.flutter.penoft.com/api/user/get-user'),
         headers: {'Authorization': 'Bearer $tokenResult'},
       );
-      log('response: ${response.statusCode}');
       final data = jsonDecode(response.body);
-      log('getUser response: $data');
       if (response.statusCode == 200) {
         return right(UserModel.fromMap(data['user']));
       } else {
@@ -204,8 +195,6 @@ class IAuthImpl {
         ),
       );
 
-      log('uploadProfilePicture response: ${response.data}');
-
       if (response.statusCode == 200) {
         return right(response.data['picture']);
       } else {
@@ -214,7 +203,6 @@ class IAuthImpl {
         );
       }
     } on DioException catch (e) {
-      log('uploadProfilePicture DioException: ${e.response?.data}');
       String errorMsg = 'Failed to upload profile picture';
       if (e.response?.data != null) {
         if (e.response!.data is Map) {

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/widgets.dart';
 import 'package:penoft_machine_test/features/materials/data/material_model.dart';
 
@@ -26,7 +24,6 @@ class CartProvider extends ChangeNotifier {
   }
 
   void incrementQty(MaterialModel material) {
-    log(material.qty.toString());
     final index = _cart.indexWhere(
       (element) => element.title == material.title,
     );

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:penoft_machine_test/general/core/failures/failures.dart';
@@ -16,7 +14,6 @@ class IBannerImpl {
         'https://machinetest.flutter.penoft.com/api/data/banner',
         options: Options(headers: {'Authorization': 'Bearer $token'}),
       );
-      log('getBanner response: ${response.data}');
       if (response.statusCode == 200) {
         return right(response.data['data']);
       } else {
