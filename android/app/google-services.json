@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "577755749490",
+    "project_id": "penoft-machine-test-562c8",
+    "storage_bucket": "penoft-machine-test-562c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577755749490:android:f7ccbf2c11305613abb6eb",
+        "android_client_info": {
+          "package_name": "com.penoft_machine_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577755749490-2quctpi3fdr24oraqamhob5lqtkg3i01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgrGDn8bKLb5s2Uk502SJa76bBSrDGnS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577755749490-2quctpi3fdr24oraqamhob5lqtkg3i01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
